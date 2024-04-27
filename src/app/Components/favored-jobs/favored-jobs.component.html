@@ -1,15 +1,15 @@
 <div *ngIf="isFavorite">
-    <div *ngFor="let bestJob of favoriteJobList">
+    <div *ngFor="let niceJob of favoriteJobList">
         <div class="row">
             <div class="col">
-                <img src="{{bestJob.companyLogo}}" alt="Favorite Job Image" />
+                <img src="{{niceJob.companyLogo}}" alt="Favorite Job Image" />
             </div>
             <div class="col">
-                <a (click)="jobDetail(bestJob)">
-                    <h3>{{bestJob.title}}</h3>
+                <a (click)="jobDetail(niceJob)">
+                    <h3>{{niceJob.title}}</h3>
                 </a>
                 <div class="disc">
-                    <h5>Company : {{bestJob.companyName}} Reference : {{bestJob.reference}}</h5>
+                    <h5>Company : {{niceJob.companyName}} Reference : {{niceJob.reference}}</h5>
                 </div>
             </div>
         </div>
