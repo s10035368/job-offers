@@ -15,7 +15,7 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
-  mainTab(name: string) {
-    this.router.navigate([`/${name}`]);
+  mainTab(identity: string) {
+    this.router.navigate([`/${identity}`]);
   }
 }

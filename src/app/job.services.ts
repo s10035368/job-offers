@@ -16,9 +16,9 @@ export interface JobInput {
 })
 
 export class JobService {
-  selectedJobArray: JobInput[] = [];
+  chosenJobArr: JobInput[] = [];
   matchingArray : JobInput[] = [];
-  SelectedJob!: JobInput;
+  ChosenJob!: JobInput;
   favoriteJob: JobInput[] = [];
   ListIdenticalJobs: JobInput[] = [];
   

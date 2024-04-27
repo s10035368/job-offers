@@ -35,7 +35,7 @@ export class JobDetailsComponent implements OnInit {
   jobDetails!: JobDetailsData;
 
   ngOnInit(): void {
-    const ListId = this.jobservice.SelectedJob.id;
+    const ListId = this.jobservice.ChosenJob.id;
     this.retrieveDetails(ListId);
   }
 
