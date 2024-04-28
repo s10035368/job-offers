@@ -37,8 +37,9 @@ export class FavoriteJobsComponent  implements OnInit {
     }
   }
 
+  // this JobDetail method is needed to show the details when job is clicked
   jobDetail(chosenJob: JobData) {
-    this.jobservice.ChosenJob = chosenJob;
-    this.router.navigate(['/jobDetails']);
+   this.jobservice.ChosenJob = chosenJob;
+   this.router.navigate(['/jobDetails']);
   }
 }

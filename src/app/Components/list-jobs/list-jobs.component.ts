@@ -15,18 +15,22 @@ export interface JobData {
 }
 
 @Component({
-  selector: 'app-job-list',
+  selector: 'app-list-job',
   standalone: true,
   imports: [CommonModule],
   templateUrl: 'list-jobs.component.html',
   styleUrl: 'list-jobs.component.css'
 })
-export class AllJobListComponent implements OnInit {
+export class ListedJobComponent implements OnInit {
   http = inject(HttpClient)
-  jobList: JobData[] = [];
   isSelected: boolean = false;
+  jobList: JobData[] = [];
 
   constructor(private jobservice: JobService, private router: Router) { }
+
+  /*
+    Code for retrieving the list of chosen jobs
+  */
 
   ngOnInit(): void {
     if (this.jobservice.chosenJobArr.length != 0) 
@@ -58,13 +62,15 @@ export class AllJobListComponent implements OnInit {
      }
     this.onJobSelect(job);
   }
-
+  /*
+    Goes to show the selected jobs mainly for favorites
+  */
   onJobSelect(job: JobData) {
     if (this.jobservice.chosenJobArr.length == 0) 
     {
       this.jobservice.chosenJobArr.push(job);
       this.jobservice.matchingArray = this.jobservice.chosenJobArr;
-      this.jobservice.favoriteJob = this.jobservice.chosenJobArr;
+     // this.jobservice.favoriteJob = this.jobservice.chosenJobArr;
     }
     else {
       for (let i = 0; i < this.jobservice.chosenJobArr.length; i++) {
@@ -86,7 +92,9 @@ export class AllJobListComponent implements OnInit {
       this.jobservice.favoriteJob = this.jobservice.chosenJobArr;
     }
   }
-
+/*
+this JobDetail method is needed to show the details when job is clicked
+*/
 
   jobDetail(selectedJob: JobData) {
     this.jobservice.ChosenJob = selectedJob;
