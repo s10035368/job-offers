@@ -16,14 +16,16 @@ export interface JobInput {
 })
 
 export class JobService {
-  chosenJobArr: JobInput[] = [];
-  matchingArray : JobInput[] = [];
-  ChosenJob!: JobInput;
   favoriteJob: JobInput[] = [];
+  ChosenJob!: JobInput;
   ListIdenticalJobs: JobInput[] = [];
+  chosenJobArr: JobInput[] = [];
+  matchingArr : JobInput[] = [];
+  
   
   
   constructor(private http: HttpClient) { }
+
 
 collectData() {
   const address = '/jobs';

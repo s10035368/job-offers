@@ -27,17 +27,27 @@ export interface JobDetailsData {
   templateUrl: 'detailed-jobs.component.html',
   styleUrl: 'detailed-jobs.component.css'
 })
-export class JobDetailsComponent implements OnInit {
+export class DetailedJobComponent implements OnInit {
   constructor(private jobservice: JobService,
     private router: Router,
     private location: Location) { }
   http = inject(HttpClient)
   jobDetails!: JobDetailsData;
 
+  /*
+    Method is called when it gets the ID of chosen job and calls retrieveDetails method for details of
+    the selected job.
+  */
+
   ngOnInit(): void {
     const ListId = this.jobservice.ChosenJob.id;
     this.retrieveDetails(ListId);
   }
+
+  /*
+    Method makes http get request for details of chose job using the ID. Subscribes to observable returned
+    by httpclient.get and jobDetails gets the data
+  */
 
   retrieveDetails(id: number) {
     const address = `${'/jobs'}/${id}`;
@@ -45,6 +55,10 @@ export class JobDetailsComponent implements OnInit {
       this.jobDetails = data;
     }))
   }
+
+  /*
+    method is for navigating back to listed job page.
+  */
   goBack() {
     this.location.back()
   }

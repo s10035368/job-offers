@@ -18,20 +18,21 @@ svg {
   height: 120px;
 }
 
-.sec1 {
+.part1 {
   display: inline-block;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin: 0px 5px 0px 5px;
   border-radius: 35px;
   background-color: #5022e9;
   margin-top: 8px;
+  font-family: Arial;
 }
 
-.sec2 {
+.part2 {
   display: inline-block;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin-right: 5px;
   font-family: Arial;
   border-radius: 35px;

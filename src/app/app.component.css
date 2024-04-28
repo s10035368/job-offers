@@ -7,7 +7,6 @@
   font-weight: bold;
   text-align: left;
   color: aqua;
-
 }
 
 .tab {
@@ -22,8 +21,6 @@
   float: left;
   height: 75px;
   width: 150px;
-  cursor: pointer;
-  padding: 15px 17px;
   font-size: 25px;
 }
 
@@ -42,9 +39,6 @@
 
 .tablinks {
   color: rgb(14, 14, 220);
-  float: left;
-  border: none;
-  outline: none;
   cursor: pointer;
   padding: 15px 17px;
   font-size: 50px;
